@@ -15,6 +15,6 @@
 
 int main(int argc, char **argv)
 {
-    printf("I do nothing at the moment!");
+    printf("I do nothing at the moment!\n");
 }
 
