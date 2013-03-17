@@ -17,6 +17,7 @@ struct Array
 };
 
 struct Array getArray(char * fname);
+void saveArray (char * fname, struct Array A);
 void printArray(struct Array A);
 
 #endif

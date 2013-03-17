@@ -21,6 +21,7 @@ struct Array A;
 
 A = getArray("test.txt");
 printArray(A);
+saveArray("test.txt.saved", A);
 
 /*
     int i;
