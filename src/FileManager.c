@@ -7,7 +7,7 @@
 // Includes
 // *************************************************
 
-#include "fileManager.h"
+#include "FileManager.h"
 #include "SortAlgs.h"
 
 // *************************************************

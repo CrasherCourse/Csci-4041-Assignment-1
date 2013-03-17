@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include "SortAlgs.h"
+#include "FileManager.h"
 
 // *************************************************
 // Code

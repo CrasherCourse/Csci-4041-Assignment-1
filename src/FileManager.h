@@ -11,6 +11,5 @@ struct Array
     int* A;
 };
 
-Array 
 
 #endif
