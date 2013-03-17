@@ -26,6 +26,7 @@ int main(int argc, char **argv)
     array[4] = 29;
     array[5] = 64;
     array[6] = 42;
+    compCount = 0;
 
     // Testing a function
     printf("I do i sort at the moment!\n");
@@ -44,5 +45,6 @@ int main(int argc, char **argv)
         printf("%d ", array[i]);
     }
     printf("\n");
+    printf("Compares: %d\n", compCount);
 }
 

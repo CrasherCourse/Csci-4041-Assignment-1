@@ -18,7 +18,7 @@
 // Prototypes
 // -------------------------------------------------
 int* file_to_array(void);
-int* compare(int a, int b);
+int compare(int a, int b);
 
 // -------------------------------------------------
 // Insertion Sort
@@ -31,7 +31,7 @@ void i_sort(int *A, int size)
         k = i;
         for(j = k-1; j > -1; j--)
         {
-            if(*(A+j) > *(A+k))         //check
+            if(compare(*(A+j), *(A+k)))         //check
             {
                 temp = *(A+j);
                 *(A+j) = *(A+k);
@@ -54,4 +54,16 @@ void i_sort(int *A, int size)
 // -------------------------------------------------
 // Quick Sort
 // -------------------------------------------------
+
+// -------------------------------------------------
+// Compare
+// -------------------------------------------------
+// equal to (a > b)
+int compare(a, b)
+{
+    compCount++;
+    if(a > b) return 1;
+    else return 0;
+}
+
 
