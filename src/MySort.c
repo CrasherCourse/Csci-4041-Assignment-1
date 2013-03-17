@@ -8,6 +8,7 @@
 // *************************************************
 
 #include <stdio.h>
+#include "SortAlgs.h"
 
 // *************************************************
 // Code
@@ -15,6 +16,31 @@
 
 int main(int argc, char **argv)
 {
-    printf("I do nothing at the moment!\n");
+    int i;
+    int array[MAX_ARRAY_SIZE];
+    int size = 5;
+    array[0] = 10;
+    array[1] = 35;
+    array[2] = 17;
+    array[3] = 1;
+    array[4] = 29;
+
+    printf("I do i sort at the moment!\n");
+
+    printf("Before: ");
+    for(i = 0; i < size; i++)
+    {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+
+    i_sort(&array[0], size);  
+  
+    printf("After: ");
+    for(i = 0; i < size; i++)
+    {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 }
 
