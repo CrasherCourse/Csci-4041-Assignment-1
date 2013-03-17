@@ -9,6 +9,7 @@
 
 #include "SortAlgs.h"
 
+
 // *************************************************
 // Code
 // *************************************************
@@ -22,25 +23,24 @@ int compare(int a, int b);
 // -------------------------------------------------
 // Insertion Sort
 // -------------------------------------------------
-void i_sort(int *A, int size)
+void i_sort(struct Array A)
 {
     int i, j, k, temp;
-    for(i = 1; i < size; i++)
+    for(i = 1; i < A.size; i++)
     {
         k = i;
         for(j = k-1; j > -1; j--)
         {
-            if(compare(*(A+j), *(A+k)))         //check
+            if(compare(*(A.p+j), *(A.p+k)))         //check
             {
-                temp = *(A+j);
-                *(A+j) = *(A+k);
-                *(A+k) = temp;
+                temp = *(A.p+j);
+                *(A.p+j) = *(A.p+k);
+                *(A.p+k) = temp;
                 k--;
             }
             else break;
         }
     }
-
 }
 // -------------------------------------------------
 // Merge Sort
