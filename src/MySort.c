@@ -17,6 +17,12 @@
 
 int main(int argc, char **argv)
 {
+struct Array A;
+
+A = getArray("test.txt");
+printArray(A);
+
+/*
     int i;
     int array[MAX_ARRAY_SIZE];
     int size = 7;
@@ -47,5 +53,6 @@ int main(int argc, char **argv)
     }
     printf("\n");
     printf("Compares: %d\n", compCount);
+*/
 }
 
