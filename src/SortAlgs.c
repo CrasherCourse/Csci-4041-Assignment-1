@@ -26,7 +26,7 @@ int* compare(int a, int b);
 void i_sort(int *A, int size)
 {
     int i, j, k, temp;
-    for(i = 1; i < (size - 1); i++)
+    for(i = 1; i < size; i++)
     {
         k = i;
         for(j = k-1; j > -1; j--)
