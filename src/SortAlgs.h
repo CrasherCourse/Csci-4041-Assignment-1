@@ -8,10 +8,9 @@
 #include <stdio.h>
 #include "FileManager.h"
 
-#define MAX_ARRAY_SIZE 100010
-
 int compCount;
 
 void i_sort(struct Array A);
+void m_sort(struct Array A, int m, int n);
 
 #endif
