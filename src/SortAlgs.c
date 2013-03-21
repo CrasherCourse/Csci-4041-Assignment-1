@@ -18,6 +18,7 @@
 // Prototypes
 // -------------------------------------------------
 int compare(int a, int b);
+void swap(struct Array A, int a, int b);
 
 // -------------------------------------------------
 // Insertion Sort
@@ -52,6 +53,35 @@ void i_sort(struct Array A)
 // -------------------------------------------------
 // Quick Sort
 // -------------------------------------------------
+// Quick Sort
+// p = index of first element, r = last element index (p.size - 1)
+void q_sort(struct Array A, int p, int r)
+{
+    if(p < r)
+    {
+        int q = partition(A, q, r);
+        q_sort(A, p, q-1);
+        q_sort(A, q+1, r);
+    }
+}
+
+// Partition
+// returns index of pivot element
+int partition(struct Array A, int p, int r)
+{
+    int pivot = A.p[r];     // Assign last element as pivot
+    int i = p-1;
+    int j;
+
+    for(j = p; j < r; j++)
+    {
+        if(!compare(A.p[j], pivot))  //!(a > b) == a <= b
+        {
+            i++;    
+        }
+    }
+}
+
 
 // -------------------------------------------------
 // Other
