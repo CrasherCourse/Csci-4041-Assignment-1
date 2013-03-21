@@ -93,5 +93,12 @@ int compare(a, b)
     compCount++;
     return (a > b);
 }
+// swap: swaps elements A.p[a] and A.p[b]
+void swap(struct Array A, int a, int b)
+{
+    int temp = A.p[a];
+    A.p[a] = A.p[b];
+    A.p[b] = temp;
+}
 
 
