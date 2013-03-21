@@ -40,9 +40,17 @@ void i_sort(struct Array A)
         }
     }
 }
+
 // -------------------------------------------------
 // Merge Sort
 // -------------------------------------------------
+void m_sort(struct Array A, int p, int r)
+{
+}
+
+void merge(struct Array A, int p, int q, int r)
+{
+}
 
 // -------------------------------------------------
 // Heap Sort
