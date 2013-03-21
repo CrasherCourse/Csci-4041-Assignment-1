@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     A = getArray("test.txt");
 
     // Testing a function
-    printf("I do q sort at the moment!\n");
+/*    printf("I do q sort at the moment!\n");
     printf("Before: ");
     printArray(A);
 
@@ -32,5 +32,7 @@ int main(int argc, char **argv)
     printArray(A);
     printf("Compares: %d\n", compCount);
     saveArray("test.txt.saved", A);
+*/
+    merge(A, 0, A.size/2, A.size - 1);
 }
 

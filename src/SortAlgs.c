@@ -50,6 +50,21 @@ void m_sort(struct Array A, int p, int r)
 
 void merge(struct Array A, int p, int q, int r)
 {
+    int i, j;
+    int n = q - p + 1;
+    int m = r - q;
+    int L[n+1], R[m+1];
+    for(i = 0; i < n; i++)
+    {
+        L[i] = A.p[p+i];
+        printf("%d \n", L[i]);
+    }
+    for(i = 0; i < m; i++)
+    {
+        R[i] = A.p[q+i+1];
+        printf("%d \n", R[i]);
+    }
+    
 }
 
 // -------------------------------------------------

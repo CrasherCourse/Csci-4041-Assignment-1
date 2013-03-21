@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include "FileManager.h"
 
+#define INT_MAX 2147483647 
+
 int compCount;
 
 void i_sort(struct Array A);
