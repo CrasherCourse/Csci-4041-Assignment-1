@@ -26,11 +26,12 @@ int main(int argc, char **argv)
     printf("Before: ");
     printArray(A);
 
-    q_sort(A, 0, A.size - 1);  
+    m_sort(A, 0, A.size - 1);  
   
     printf("After: ");
     printArray(A);
     printf("Compares: %d\n", compCount);
     saveArray("test.txt.saved", A);
+
 }
 
