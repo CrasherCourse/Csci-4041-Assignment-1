@@ -22,11 +22,11 @@ int main(int argc, char **argv)
     A = getArray("test.txt");
 
     // Testing a function
-    printf("I do i sort at the moment!\n");
+    printf("I do q sort at the moment!\n");
     printf("Before: ");
     printArray(A);
 
-    i_sort(A);  
+    q_sort(A, 0, A.size - 1);  
   
     printf("After: ");
     printArray(A);
