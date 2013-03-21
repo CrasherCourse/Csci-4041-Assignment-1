@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_ARRAY_SIZE 100010
+
 struct Array
 {
     int size;
