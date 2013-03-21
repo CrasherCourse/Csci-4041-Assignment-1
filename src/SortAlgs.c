@@ -19,6 +19,7 @@
 // -------------------------------------------------
 int compare(int a, int b);
 void swap(struct Array A, int a, int b);
+void merge(struct Array A, int p, int q, int r);
 
 // -------------------------------------------------
 // Insertion Sort
@@ -46,25 +47,39 @@ void i_sort(struct Array A)
 // -------------------------------------------------
 void m_sort(struct Array A, int p, int r)
 {
+    if(p<r)
+    {
+        int q = (p+r)/2;
+        m_sort(A, p, q);
+        m_sort(A, q+1, r);
+        merge(A, p, q, r);
+    }
 }
 
+// Merge
 void merge(struct Array A, int p, int q, int r)
 {
-    int i, j;
+    int i, j, k;
     int n = q - p + 1;
     int m = r - q;
     int L[n+1], R[m+1];
     for(i = 0; i < n; i++)
     {
         L[i] = A.p[p+i];
-        printf("%d \n", L[i]);
     }
     for(i = 0; i < m; i++)
     {
         R[i] = A.p[q+i+1];
-        printf("%d \n", R[i]);
     }
-    
+    L[n] = R[m] = INT_MAX;
+    i = j = 0;
+    for(k=p; k <= r; k++)
+    {
+        if(!compare(L[i], R[j]))
+            A.p[k] = L[i++];
+        else
+            A.p[k] = R[j++];        
+    }
 }
 
 // -------------------------------------------------
