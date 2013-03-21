@@ -33,9 +33,7 @@ void i_sort(struct Array A)
         {
             if(compare(A.p[j], A.p[k]))         //check
             {
-                temp = A.p[j];                    // Move A[j] up
-                A.p[j] = A.p[k];
-                A.p[k] = temp;
+                swap(A, j, k);
                 k--;
             }
             else break;
