@@ -57,7 +57,7 @@ void q_sort(struct Array A, int p, int r)
 {
     if(p < r)
     {
-        int q = partition(A, q, r);
+        int q = partition(A, p, r);
         q_sort(A, p, q-1);
         q_sort(A, q+1, r);
     }
@@ -75,9 +75,12 @@ int partition(struct Array A, int p, int r)
     {
         if(!compare(A.p[j], pivot))  //!(a > b) == a <= b
         {
-            i++;    
+            i++;
+            swap(A, i, j);
         }
     }
+    swap(A, ++i, r);
+    return i;
 }
 
 
