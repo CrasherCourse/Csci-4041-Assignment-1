@@ -14,9 +14,9 @@
 // *************************************************
 
 // Makes an int Array from a file
-struct Array getArray(char * fname)
+Array getArray(char * fname)
 {
-    struct Array x;
+    Array x;
     FILE * fp;
     int buffer[100010];
     int e;
@@ -39,7 +39,7 @@ struct Array getArray(char * fname)
 }
 
 // Save an Array to the specified file name
-void saveArray (char * fname, struct Array A)
+void saveArray (char * fname, Array A)
 {
     FILE * fp;
     int i;    
@@ -57,7 +57,7 @@ void saveArray (char * fname, struct Array A)
 }
 
 // Print out the Array A
-void printArray(struct Array A)
+void printArray(Array A)
 {
     int i;
 

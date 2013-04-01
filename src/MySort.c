@@ -17,7 +17,7 @@
 
 int main(int argc, char **argv)
 {
-    struct Array A;
+    Array A;
 
     A = getArray("test.txt");
 

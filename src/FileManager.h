@@ -12,14 +12,14 @@
 
 #define MAX_ARRAY_SIZE 100010
 
-struct Array
+typedef struct Array
 {
     int size;
     int* p;
-};
+}Array;
 
-struct Array getArray(char * fname);
-void saveArray (char * fname, struct Array A);
-void printArray(struct Array A);
+Array getArray(char * fname);
+void saveArray (char * fname, Array A);
+void printArray(Array A);
 
 #endif

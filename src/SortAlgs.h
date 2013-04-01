@@ -12,9 +12,9 @@
 
 int compCount;
 
-void i_sort(struct Array A);
-void m_sort(struct Array A, int p, int r);
-void h_sort(struct Array A);
-void q_sort(struct Array A, int p, int r);
+void i_sort(Array A);
+void m_sort(Array A, int p, int r);
+void h_sort(Array A);
+void q_sort(Array A, int p, int r);
 
 #endif
