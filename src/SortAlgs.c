@@ -85,6 +85,20 @@ void merge(Array A, int p, int q, int r)
 // -------------------------------------------------
 // Heap Sort
 // -------------------------------------------------
+// Heap Sort
+void h_sort(Array A)
+{
+}
+// Build Max Heap
+void build_max_heap(Array A)
+{
+}
+// Max Heapify
+void max_heapify(Array A, int x)
+{
+}
+// Parent index
+int parent(int x)
 
 // -------------------------------------------------
 // Quick Sort
