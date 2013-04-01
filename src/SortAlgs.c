@@ -20,6 +20,10 @@
 int compare(int a, int b);
 void swap(Array A, int a, int b);
 void merge(Array A, int p, int q, int r);
+void build_max_heap(Array A);
+void max_heapify(Array A, int x);
+int parent_index(int x);
+int child_index(int x, char which);
 
 // -------------------------------------------------
 // Insertion Sort
@@ -88,18 +92,45 @@ void merge(Array A, int p, int q, int r)
 // Heap Sort
 void h_sort(Array A)
 {
+	
 }
 // Build Max Heap
 void build_max_heap(Array A)
 {
+	int i;
+	for(i = A.size; i >= 0; i--)
+	{
+		max_heapify(A, i);
+	}
 }
 // Max Heapify
 void max_heapify(Array A, int x)
 {
+	if(x != 0 && compare(A.p[x], A.p[parent_index(x)]))	// If not at the root and 
+	{
+		swap(A, x, parent_index(x));
+		max_heapify(A, parent_index(x));
+	}
+	return;
 }
 // Parent index
-int parent(int x)
-
+// Returns index of parent
+int parent_index(int x)
+{
+	return (x-1)/2;
+}
+// Child index
+int child_index(int x, char which)
+{
+	switch(which)
+	{
+		case 'l':
+		return (x*2 + 1);
+		case 'r':
+		return (x*2 + 2);
+		return -1;
+	}
+}
 // -------------------------------------------------
 // Quick Sort
 // -------------------------------------------------
