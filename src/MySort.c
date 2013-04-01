@@ -27,11 +27,11 @@ int main(int argc, char **argv)
     printf("Before: ");
     printArray(A);
 
-	build_max_heap(A); 
+	h_sort(A); 
   
-    printf("After: ");
+    printf("After:\t");
     printArray(A);
-    printf("Compares: %d\n", compCount);
+    printf("Compares:\t%d\n", compCount);
     saveArray("test.txt.saved", A);
 	
 

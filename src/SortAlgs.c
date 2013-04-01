@@ -92,15 +92,37 @@ void merge(Array A, int p, int q, int r)
 // Heap Sort
 void h_sort(Array A)
 {
-	
+	int i;
+	int size = A.size;
+	build_max_heap(A);
+	for(i = (A.size - 1); i > 0; i--)
+	{
+		swap(A, 0, i);
+		heapify(A, 0, --size);
+	}
 }
 // Build Max Heap
 void build_max_heap(Array A)
 {
 	int i;
-	for(i = A.size; i >= 0; i--)
+	for(i = A.size-1; i >= 0; i--)
 	{
-		max_heapify(A, i);
+		heapify(A, i, A.size);
+	}
+}
+// Some Other Heapify
+void heapify(Array A, int x, int size)
+{
+	
+	if(child_index(x, 'r') < size && compare(A.p[child_index(x, 'r')], A.p[child_index(x, 'l')]) && compare(A.p[child_index(x, 'r')], A.p[x]))	// If right child is greater than parent
+	{
+		swap(A, x, child_index(x, 'r'));
+		heapify(A, child_index(x, 'r'), size);
+	}
+	else if (child_index(x, 'l') < size && compare(A.p[child_index(x, 'l')], A.p[child_index(x, 'r')]) && compare(A.p[child_index(x, 'l')], A.p[x]))	// If left child is greater than parent
+	{
+		swap(A, x, child_index(x, 'l'));
+		heapify(A, child_index(x, 'l'), size);
 	}
 }
 // Max Heapify
