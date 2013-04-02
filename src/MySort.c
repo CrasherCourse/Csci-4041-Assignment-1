@@ -22,16 +22,18 @@ int main(int argc, char **argv)
     A = getArray("test.txt");
 
     // Testing a function
-    printf("I do q sort at the moment!\n");
+    
+    printf("I do h sort at the moment!\n");
     printf("Before: ");
     printArray(A);
 
-    m_sort(A, 0, A.size - 1);  
+	h_sort(A); 
   
-    printf("After: ");
+    printf("After:\t");
     printArray(A);
-    printf("Compares: %d\n", compCount);
-    saveArray("test.txt.saved", A);
+    printf("Compares:\t%d\n", compCount);
+    saveArray("test.txt.sorted", A);
+	
 
 }
 
