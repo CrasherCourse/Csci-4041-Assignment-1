@@ -21,7 +21,7 @@ int compare(int a, int b);
 void swap(Array A, int a, int b);
 void merge(Array A, int p, int q, int r);
 void build_max_heap(Array A);
-void max_heapify(Array A, int x);
+void max_heapify(Array A, int x, int size);
 int parent_index(int x);
 int child_index(int x, char which);
 
@@ -98,7 +98,7 @@ void h_sort(Array A)
 	for(i = (A.size - 1); i > 0; i--)
 	{
 		swap(A, 0, i);
-		heapify(A, 0, --size);
+		max_heapify(A, 0, --size);
 	}
 }
 // Build Max Heap
@@ -107,34 +107,25 @@ void build_max_heap(Array A)
 	int i;
 	for(i = A.size-1; i >= 0; i--)
 	{
-		heapify(A, i, A.size);
+		max_heapify(A, i, A.size);
 	}
 }
-// Some Other Heapify
-void heapify(Array A, int x, int size)
+// Some Other max_heapify
+void max_heapify(Array A, int x, int size)
 {
 	
 	if(child_index(x, 'r') < size && compare(A.p[child_index(x, 'r')], A.p[child_index(x, 'l')]) && compare(A.p[child_index(x, 'r')], A.p[x]))	// If right child is greater than parent
 	{
 		swap(A, x, child_index(x, 'r'));
-		heapify(A, child_index(x, 'r'), size);
+		max_heapify(A, child_index(x, 'r'), size);
 	}
 	else if (child_index(x, 'l') < size && compare(A.p[child_index(x, 'l')], A.p[child_index(x, 'r')]) && compare(A.p[child_index(x, 'l')], A.p[x]))	// If left child is greater than parent
 	{
 		swap(A, x, child_index(x, 'l'));
-		heapify(A, child_index(x, 'l'), size);
+		max_heapify(A, child_index(x, 'l'), size);
 	}
 }
-// Max Heapify
-void max_heapify(Array A, int x)
-{
-	if(x != 0 && compare(A.p[x], A.p[parent_index(x)]))	// If not at the root and 
-	{
-		swap(A, x, parent_index(x));
-		max_heapify(A, parent_index(x));
-	}
-	return;
-}
+
 // Parent index
 // Returns index of parent
 int parent_index(int x)

@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     printf("After:\t");
     printArray(A);
     printf("Compares:\t%d\n", compCount);
-    saveArray("test.txt.saved", A);
+    saveArray("test.txt.sorted", A);
 	
 
 }

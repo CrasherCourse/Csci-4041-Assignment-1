@@ -18,7 +18,7 @@ Array getArray(char * fname)
 {
     Array x;
     FILE * fp;
-    int buffer[100010];
+    int buffer[100010];						// Hard max size is 10010
     int e;
     x.size = 0;
 
@@ -56,8 +56,8 @@ void saveArray (char * fname, Array A)
     }
 }
 
-// Print out the Array A
-void printArray(Array A)
+// Print out the Array A, for debugging purposes
+void printArray(Array A)					
 {
     int i;
 
