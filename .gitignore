@@ -2,3 +2,5 @@
 MySort
 *~
 *.txt
+*.sorted
+*.stats

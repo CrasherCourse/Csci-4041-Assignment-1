@@ -20,6 +20,10 @@
 int compare(int a, int b);
 void swap(Array A, int a, int b);
 void merge(Array A, int p, int q, int r);
+void build_max_heap(Array A);
+void max_heapify(Array A, int x, int size);
+int parent_index(int x);
+int child_index(int x, char which);
 
 // -------------------------------------------------
 // Insertion Sort
@@ -85,7 +89,61 @@ void merge(Array A, int p, int q, int r)
 // -------------------------------------------------
 // Heap Sort
 // -------------------------------------------------
+// Heap Sort
+void h_sort(Array A)
+{
+	int i;
+	int size = A.size;
+	build_max_heap(A);
+	for(i = (A.size - 1); i > 0; i--)
+	{
+		swap(A, 0, i);
+		max_heapify(A, 0, --size);
+	}
+}
+// Build Max Heap
+void build_max_heap(Array A)
+{
+	int i;
+	for(i = A.size-1; i >= 0; i--)
+	{
+		max_heapify(A, i, A.size);
+	}
+}
+// Some Other max_heapify
+void max_heapify(Array A, int x, int size)
+{
+	
+	if(child_index(x, 'r') < size && compare(A.p[child_index(x, 'r')], A.p[child_index(x, 'l')]) && compare(A.p[child_index(x, 'r')], A.p[x]))	// If right child is greater than parent
+	{
+		swap(A, x, child_index(x, 'r'));
+		max_heapify(A, child_index(x, 'r'), size);
+	}
+	else if (child_index(x, 'l') < size && compare(A.p[child_index(x, 'l')], A.p[child_index(x, 'r')]) && compare(A.p[child_index(x, 'l')], A.p[x]))	// If left child is greater than parent
+	{
+		swap(A, x, child_index(x, 'l'));
+		max_heapify(A, child_index(x, 'l'), size);
+	}
+}
 
+// Parent index
+// Returns index of parent
+int parent_index(int x)
+{
+	return (x-1)/2;
+}
+// Child index
+int child_index(int x, char which)
+{
+	switch(which)
+	{
+		case 'l':
+		return (x*2 + 1);
+		case 'r':
+		return (x*2 + 2);
+		return -1;
+	}
+}
 // -------------------------------------------------
 // Quick Sort
 // -------------------------------------------------
