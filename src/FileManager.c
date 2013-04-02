@@ -39,21 +39,35 @@ Array getArray(char * fname)
 }
 
 // Save an Array to the specified file name
-void saveArray (char * fname, Array A)
+void saveArray (char * fname, char * sortAlg, Array A)
 {
     FILE * fp;
-    int i;    
-
-    if((fp = fopen(fname, "w")) == NULL)    // Open file
+    int i;
+	char sname[100];
+	sprintf(sname, "%s_%s.sorted", sortAlg, fname);
+	
+    if((fp = fopen(sname, "w")) == NULL)    // Open .sorted file
     {
         perror("");
         exit(1);
     }
 
-    for(i = 0; i < A.size; i++)
+    for(i = 0; i < A.size; i++)				// Print each number to the new file
     {
         fprintf(fp, "%d\n", *(A.p+i));
     }
+    
+    fclose(fp);
+    
+    strcat(sname, ".stats");
+    if((fp = fopen(sname, "w")) == NULL)    // Open .stats file
+    {
+        perror("");
+        exit(1);
+    }
+    
+    fprintf(fp, "%d compares\n", compCount);
+    
 }
 
 // Print out the Array A, for debugging purposes
@@ -66,4 +80,15 @@ void printArray(Array A)
         printf("%d ", *(A.p+i));
     }
     printf("\n");
+}
+
+// Start the timer and compare counter
+void startTimer(void)
+{
+	compCount = 0;
+}
+
+// Stop the timer
+void stopTimer(void)
+{
 }

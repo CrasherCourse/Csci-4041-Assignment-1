@@ -12,6 +12,8 @@
 
 #define MAX_ARRAY_SIZE 100010
 
+int compCount;
+
 typedef struct Array
 {
     int size;
@@ -19,7 +21,9 @@ typedef struct Array
 }Array;
 
 Array getArray(char * fname);
-void saveArray (char * fname, Array A);
+void saveArray (char * fname, char * sortAlg, Array A);
 void printArray(Array A);
+void startTimer(void);
+void stopTimer(void);
 
 #endif

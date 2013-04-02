@@ -10,7 +10,6 @@
 
 #define INT_MAX 2147483647 
 
-int compCount;
 
 void i_sort(Array A);
 void m_sort(Array A, int p, int r);
