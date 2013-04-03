@@ -9,10 +9,13 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define MAX_ARRAY_SIZE 100010
 
-int compCount;
+unsigned long int compCount, sortTime;
+struct timespec t1, t2;
+
 
 typedef struct Array
 {
