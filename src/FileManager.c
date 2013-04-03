@@ -71,6 +71,8 @@ void saveArray (char * fname, char * sortAlg, Array A)
     fprintf(fp, "%ld compares\n", compCount);
     fprintf(fp, "%ld milliseconds\n", sortTime);
     fclose(fp);
+    
+    if(!isSorted(A))  printf("%s sort did not sort %s correctly\n", sortAlg, fname);
 }
 
 // Print out the Array A, for debugging purposes
@@ -110,5 +112,7 @@ int isSorted(Array A)
 	{
 		if(A.p[i] > A.p[j]) return 0;
 	}
-	return 0;
+	return 1;
 }
+
+

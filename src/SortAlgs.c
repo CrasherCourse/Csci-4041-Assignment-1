@@ -101,6 +101,19 @@ void h_sort(Array A)
 		max_heapify(A, 0, --size);
 	}
 }
+
+// Is max heap
+// A debugging tool
+int isMaxHeap(Array A)
+{
+	int i;
+	for(i = 1; i<A.size; i++)
+	{
+		if(A.p[i] > A.p[parent_index(i)]) return 0;
+	}
+	return 1;
+}
+
 // Build Max Heap
 void build_max_heap(Array A)
 {
@@ -109,17 +122,18 @@ void build_max_heap(Array A)
 	{
 		max_heapify(A, i, A.size);
 	}
+	if(!isMaxHeap(A)) printf("Not a max heap\n");
 }
-// Some Other max_heapify
+// Max heapify
 void max_heapify(Array A, int x, int size)
 {
 	
-	if(child_index(x, 'r') < size && compare(A.p[child_index(x, 'r')], A.p[child_index(x, 'l')]) && compare(A.p[child_index(x, 'r')], A.p[x]))	// If right child is greater than parent
+	if(child_index(x, 'r') < size && compare(A.p[child_index(x, 'r')], A.p[child_index(x, 'l')]) && compare(A.p[child_index(x, 'r')], A.p[x]))	// If right child is greater than parent and sibling
 	{
 		swap(A, x, child_index(x, 'r'));
 		max_heapify(A, child_index(x, 'r'), size);
 	}
-	else if (child_index(x, 'l') < size && compare(A.p[child_index(x, 'l')], A.p[child_index(x, 'r')]) && compare(A.p[child_index(x, 'l')], A.p[x]))	// If left child is greater than parent
+	else if (child_index(x, 'l') < size && compare(A.p[child_index(x, 'l')], A.p[x]))	// If left child is greater than parent
 	{
 		swap(A, x, child_index(x, 'l'));
 		max_heapify(A, child_index(x, 'l'), size);
@@ -141,6 +155,7 @@ long int child_index(int x, char which)
 		return (x*2 + 1);
 		case 'r':
 		return (x*2 + 2);
+		default:
 		return -1;
 	}
 }
