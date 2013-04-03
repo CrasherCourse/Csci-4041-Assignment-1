@@ -2,7 +2,7 @@
 # This is the makefile for MySort
 
 MySort: src/MySort.o src/SortAlgs.o src/FileManager.o
-	gcc -g -o MySort src/MySort.o src/SortAlgs.o src/FileManager.o
+	gcc -g -o MySort src/MySort.o src/SortAlgs.o src/FileManager.o -lrt
 
 src/MySort.o: src/MySort.c 
 	gcc -g -o src/MySort.o -c src/MySort.c

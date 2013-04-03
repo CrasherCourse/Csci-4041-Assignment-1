@@ -23,7 +23,7 @@ void merge(Array A, int p, int q, int r);
 void build_max_heap(Array A);
 void max_heapify(Array A, int x, int size);
 int parent_index(int x);
-int child_index(int x, char which);
+long int child_index(int x, char which);
 
 // -------------------------------------------------
 // Insertion Sort
@@ -133,7 +133,7 @@ int parent_index(int x)
 	return (x-1)/2;
 }
 // Child index
-int child_index(int x, char which)
+long int child_index(int x, char which)
 {
 	switch(which)
 	{
